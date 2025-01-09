@@ -1,0 +1,123 @@
+
+./finish/lui.elf:     file format elf64-littleriscv
+./finish/lui.elf
+architecture: riscv:rv64, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x0000000000000000
+
+Program Header:
+0x70000003 off    0x0000000000001098 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**0
+         filesz 0x000000000000001a memsz 0x0000000000000000 flags r--
+    LOAD off    0x0000000000001000 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**12
+         filesz 0x0000000000000098 memsz 0x0000000000000098 flags r-x
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         00000098  0000000000000000  0000000000000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .riscv.attributes 0000001a  0000000000000000  0000000000000000  00001098  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .riscv.attributes	0000000000000000 .riscv.attributes
+0000000000000000 l    df *ABS*	0000000000000000 setup.o
+0000000000000000 l       .text	0000000000000000 _start
+0000000000000000 l       .text	0000000000000000 init_stack
+0000000000000008 l       .text	0000000000000000 SystemInit
+000000000000000c l       .text	0000000000000000 SystemExit
+000000000000001c l       .text	0000000000000000 dead_loop
+0000000000000000 l    df *ABS*	0000000000000000 lui.o
+0000000000000028 l       .text	0000000000000000 lui_2
+0000000000000088 l       .text	0000000000000000 failed
+0000000000000038 l       .text	0000000000000000 lui_3
+000000000000004c l       .text	0000000000000000 lui_4
+0000000000000060 l       .text	0000000000000000 lui_5
+0000000000000074 l       .text	0000000000000000 lui_6
+0000000000000084 l       .text	0000000000000000 pass
+000000000000008c l       .text	0000000000000000 main_exit
+000000000000fffc g       .text	0000000000000000 _sim_end
+0000000000000020 g       .text	0000000000000000 main
+0000000000009000 g       .text	0000000000000000 _answer
+000000000000fff0 g       .text	0000000000000000 _stack
+
+
+Contents of section .text:
+ 0000 17010100 130101ff ef008001 97020100  ................
+ 0010 938202ff 1303f0ff 23a06200 6f000000  ........#.b.o...
+ 0020 130e0400 938e0000 93012000 b7000000  .......... .....
+ 0030 93030000 639a7004 93013000 b7f0ffff  ....c.p...0.....
+ 0040 93d01040 93030080 63907004 93014000  ...@....c.p...@.
+ 0050 b7f0ff7f 93d04041 9303f07f 63967002  ......@A....c.p.
+ 0060 93015000 b7000080 93d04041 93030080  ..P.......@A....
+ 0070 639c7000 93016000 37000080 93030000  c.p...`.7.......
+ 0080 63147000 93010000 23203400 93800e00  c.p.....# 4.....
+ 0090 13040e00 67800000                    ....g...        
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727636 34693270 3100               .rv64i2p1.      
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00010117          	auipc	sp,0x10
+   4:	ff010113          	addi	sp,sp,-16 # fff0 <_stack>
+
+0000000000000008 <SystemInit>:
+   8:	018000ef          	jal	20 <main>
+
+000000000000000c <SystemExit>:
+   c:	00010297          	auipc	t0,0x10
+  10:	ff028293          	addi	t0,t0,-16 # fffc <_sim_end>
+  14:	fff00313          	li	t1,-1
+  18:	0062a023          	sw	t1,0(t0)
+
+000000000000001c <dead_loop>:
+  1c:	0000006f          	j	1c <dead_loop>
+
+0000000000000020 <main>:
+  20:	00040e13          	mv	t3,s0
+  24:	00008e93          	mv	t4,ra
+
+0000000000000028 <lui_2>:
+  28:	00200193          	li	gp,2
+  2c:	000000b7          	lui	ra,0x0
+  30:	00000393          	li	t2,0
+  34:	04709a63          	bne	ra,t2,88 <failed>
+
+0000000000000038 <lui_3>:
+  38:	00300193          	li	gp,3
+  3c:	fffff0b7          	lui	ra,0xfffff
+  40:	4010d093          	srai	ra,ra,0x1
+  44:	80000393          	li	t2,-2048
+  48:	04709063          	bne	ra,t2,88 <failed>
+
+000000000000004c <lui_4>:
+  4c:	00400193          	li	gp,4
+  50:	7ffff0b7          	lui	ra,0x7ffff
+  54:	4140d093          	srai	ra,ra,0x14
+  58:	7ff00393          	li	t2,2047
+  5c:	02709663          	bne	ra,t2,88 <failed>
+
+0000000000000060 <lui_5>:
+  60:	00500193          	li	gp,5
+  64:	800000b7          	lui	ra,0x80000
+  68:	4140d093          	srai	ra,ra,0x14
+  6c:	80000393          	li	t2,-2048
+  70:	00709c63          	bne	ra,t2,88 <failed>
+
+0000000000000074 <lui_6>:
+  74:	00600193          	li	gp,6
+  78:	80000037          	lui	zero,0x80000
+  7c:	00000393          	li	t2,0
+  80:	00701463          	bne	zero,t2,88 <failed>
+
+0000000000000084 <pass>:
+  84:	00000193          	li	gp,0
+
+0000000000000088 <failed>:
+  88:	00342023          	sw	gp,0(s0)
+
+000000000000008c <main_exit>:
+  8c:	000e8093          	mv	ra,t4
+  90:	000e0413          	mv	s0,t3
+  94:	00008067          	ret
