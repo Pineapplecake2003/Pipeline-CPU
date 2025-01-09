@@ -1,0 +1,464 @@
+
+./finish/bgeu.elf:     file format elf64-littleriscv
+./finish/bgeu.elf
+architecture: riscv:rv64, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x0000000000000000
+
+Program Header:
+0x70000003 off    0x0000000000001430 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**0
+         filesz 0x000000000000001a memsz 0x0000000000000000 flags r--
+    LOAD off    0x0000000000001000 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**12
+         filesz 0x0000000000000430 memsz 0x0000000000000430 flags r-x
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         00000430  0000000000000000  0000000000000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .riscv.attributes 0000001a  0000000000000000  0000000000000000  00001430  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .riscv.attributes	0000000000000000 .riscv.attributes
+0000000000000000 l    df *ABS*	0000000000000000 setup.o
+0000000000000000 l       .text	0000000000000000 _start
+0000000000000000 l       .text	0000000000000000 init_stack
+0000000000000008 l       .text	0000000000000000 SystemInit
+000000000000000c l       .text	0000000000000000 SystemExit
+000000000000001c l       .text	0000000000000000 dead_loop
+0000000000000000 l    df *ABS*	0000000000000000 bgeu.o
+0000000000000028 l       .text	0000000000000000 bgeu_2
+0000000000000420 l       .text	0000000000000000 failed
+0000000000000048 l       .text	0000000000000000 bgeu_3
+0000000000000068 l       .text	0000000000000000 bgeu_4
+0000000000000098 l       .text	0000000000000000 bgeu_5
+00000000000000b8 l       .text	0000000000000000 bgeu_6
+00000000000000e8 l       .text	0000000000000000 bgeu_7
+0000000000000110 l       .text	0000000000000000 bgeu_8
+000000000000012c l       .text	0000000000000000 bgeu_9
+0000000000000158 l       .text	0000000000000000 bgeu_10
+000000000000017c l       .text	0000000000000000 bgeu_11
+00000000000001a0 l       .text	0000000000000000 bgeu_12
+00000000000001cc l       .text	0000000000000000 bgeu_13
+00000000000001fc l       .text	0000000000000000 bgeu_14
+0000000000000230 l       .text	0000000000000000 bgeu_15
+0000000000000260 l       .text	0000000000000000 bgeu_16
+0000000000000294 l       .text	0000000000000000 bgeu_17
+00000000000002c8 l       .text	0000000000000000 bgeu_18
+00000000000002f4 l       .text	0000000000000000 bgeu_19
+0000000000000324 l       .text	0000000000000000 bgeu_20
+0000000000000358 l       .text	0000000000000000 bgeu_21
+0000000000000388 l       .text	0000000000000000 bgeu_22
+00000000000003bc l       .text	0000000000000000 bgeu_23
+00000000000003f0 l       .text	0000000000000000 bgeu_24
+000000000000041c l       .text	0000000000000000 pass
+0000000000000424 l       .text	0000000000000000 main_exit
+000000000000fffc g       .text	0000000000000000 _sim_end
+0000000000000020 g       .text	0000000000000000 main
+0000000000009000 g       .text	0000000000000000 _answer
+000000000000fff0 g       .text	0000000000000000 _stack
+
+
+Contents of section .text:
+ 0000 17010100 130101ff ef008001 97020100  ................
+ 0010 938202ff 1303f0ff 23a06200 6f000000  ........#.b.o...
+ 0020 130e0400 938e0000 93012000 93000000  .......... .....
+ 0030 13010000 63f62000 6314303e 63163000  ....c. .c.0>c.0.
+ 0040 e3fe20fe 631e303c 93013000 93001000  .. .c.0<..0.....
+ 0050 13011000 63f62000 6314303c 63163000  ....c. .c.0<c.0.
+ 0060 e3fe20fe 631e303a 93014000 9b001000  .. .c.0:..@.....
+ 0070 93900002 9380f0ff 1b011000 13110102  ................
+ 0080 1301f1ff 63f62000 631c3038 63163000  ....c. .c.08c.0.
+ 0090 e3fe20fe 63163038 93015000 93001000  .. .c.08..P.....
+ 00a0 13010000 63f62000 631c3036 63163000  ....c. .c.06c.0.
+ 00b0 e3fe20fe 63163036 93016000 9b001000  .. .c.06..`.....
+ 00c0 93900002 9380f0ff 1b011000 13110102  ................
+ 00d0 1301e1ff 63f62000 63143034 63163000  ....c. .c.04c.0.
+ 00e0 e3fe20fe 631e3032 93017000 9b001000  .. .c.02..p.....
+ 00f0 93900002 9380f0ff 13010000 63f62000  ............c. .
+ 0100 63103032 63163000 e3fe20fe 631a3030  c.02c.0... .c.00
+ 0110 93018000 93000000 13011000 63f42000  ............c. .
+ 0120 63143000 631e302e e3fe20fe 93019000  c.0.c.0... .....
+ 0130 9b001000 93900002 9380e0ff 1b011000  ................
+ 0140 13110102 1301f1ff 63f42000 63143000  ........c. .c.0.
+ 0150 6318302c e3fe20fe 9301a000 93000000  c.0,.. .........
+ 0160 1b011000 13110102 1301f1ff 63f42000  ............c. .
+ 0170 63143000 6316302a e3fe20fe 9301b000  c.0.c.0*.. .....
+ 0180 b7000080 9b80f0ff 1b011000 1311f101  ................
+ 0190 63f42000 63143000 63143028 e3fe20fe  c. .c.0.c.0(.. .
+ 01a0 9301c000 13020000 9b00f000 9390c001  ................
+ 01b0 9380f0ff 1b01f000 1311c101 63f22026  ............c. &
+ 01c0 13021200 93022000 e31052fe 9301d000  ...... ...R.....
+ 01d0 13020000 9b00f000 9390c001 9380f0ff  ................
+ 01e0 1b01f000 1311c101 13000000 63fa2022  ............c. "
+ 01f0 13021200 93022000 e31e52fc 9301e000  ...... ...R.....
+ 0200 13020000 9b00f000 9390c001 9380f0ff  ................
+ 0210 1b01f000 1311c101 13000000 13000000  ................
+ 0220 63f02020 13021200 93022000 e31c52fc  c.  ...... ...R.
+ 0230 9301f000 13020000 9b00f000 9390c001  ................
+ 0240 9380f0ff 13000000 1b01f000 1311c101  ................
+ 0250 63f8201c 13021200 93022000 e31e52fc  c. ....... ...R.
+ 0260 93010001 13020000 9b00f000 9390c001  ................
+ 0270 9380f0ff 13000000 1b01f000 1311c101  ................
+ 0280 13000000 63fe2018 13021200 93022000  ....c. ....... .
+ 0290 e31c52fc 93011001 13020000 9b00f000  ..R.............
+ 02a0 9390c001 9380f0ff 13000000 13000000  ................
+ 02b0 1b01f000 1311c101 63f42016 13021200  ........c. .....
+ 02c0 93022000 e31c52fc 93012001 13020000  .. ...R... .....
+ 02d0 9b00f000 9390c001 9380f0ff 1b01f000  ................
+ 02e0 1311c101 63fe2012 13021200 93022000  ....c. ....... .
+ 02f0 e31052fe 93013001 13020000 9b00f000  ..R...0.........
+ 0300 9390c001 9380f0ff 1b01f000 1311c101  ................
+ 0310 13000000 63f62010 13021200 93022000  ....c. ....... .
+ 0320 e31e52fc 93014001 13020000 9b00f000  ..R...@.........
+ 0330 9390c001 9380f0ff 1b01f000 1311c101  ................
+ 0340 13000000 13000000 63fc200c 13021200  ........c. .....
+ 0350 93022000 e31c52fc 93015001 13020000  .. ...R...P.....
+ 0360 9b00f000 9390c001 9380f0ff 13000000  ................
+ 0370 1b01f000 1311c101 63f4200a 13021200  ........c. .....
+ 0380 93022000 e31e52fc 93016001 13020000  .. ...R...`.....
+ 0390 9b00f000 9390c001 9380f0ff 13000000  ................
+ 03a0 1b01f000 1311c101 13000000 63fa2006  ............c. .
+ 03b0 13021200 93022000 e31c52fc 93017001  ...... ...R...p.
+ 03c0 13020000 9b00f000 9390c001 9380f0ff  ................
+ 03d0 13000000 13000000 1b01f000 1311c101  ................
+ 03e0 63f02004 13021200 93022000 e31c52fc  c. ....... ...R.
+ 03f0 93018001 93001000 63fa0000 93801000  ........c.......
+ 0400 93801000 93801000 93801000 93801000  ................
+ 0410 93801000 93033000 63947000 93010000  ......0.c.p.....
+ 0420 23203400 93800e00 13040e00 67800000  # 4.........g...
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727636 34693270 3100               .rv64i2p1.      
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00010117          	auipc	sp,0x10
+   4:	ff010113          	addi	sp,sp,-16 # fff0 <_stack>
+
+0000000000000008 <SystemInit>:
+   8:	018000ef          	jal	20 <main>
+
+000000000000000c <SystemExit>:
+   c:	00010297          	auipc	t0,0x10
+  10:	ff028293          	addi	t0,t0,-16 # fffc <_sim_end>
+  14:	fff00313          	li	t1,-1
+  18:	0062a023          	sw	t1,0(t0)
+
+000000000000001c <dead_loop>:
+  1c:	0000006f          	j	1c <dead_loop>
+
+0000000000000020 <main>:
+  20:	00040e13          	mv	t3,s0
+  24:	00008e93          	mv	t4,ra
+
+0000000000000028 <bgeu_2>:
+  28:	00200193          	li	gp,2
+  2c:	00000093          	li	ra,0
+  30:	00000113          	li	sp,0
+  34:	0020f663          	bgeu	ra,sp,40 <bgeu_2+0x18>
+  38:	3e301463          	bne	zero,gp,420 <failed>
+  3c:	00301663          	bne	zero,gp,48 <bgeu_3>
+  40:	fe20fee3          	bgeu	ra,sp,3c <bgeu_2+0x14>
+  44:	3c301e63          	bne	zero,gp,420 <failed>
+
+0000000000000048 <bgeu_3>:
+  48:	00300193          	li	gp,3
+  4c:	00100093          	li	ra,1
+  50:	00100113          	li	sp,1
+  54:	0020f663          	bgeu	ra,sp,60 <bgeu_3+0x18>
+  58:	3c301463          	bne	zero,gp,420 <failed>
+  5c:	00301663          	bne	zero,gp,68 <bgeu_4>
+  60:	fe20fee3          	bgeu	ra,sp,5c <bgeu_3+0x14>
+  64:	3a301e63          	bne	zero,gp,420 <failed>
+
+0000000000000068 <bgeu_4>:
+  68:	00400193          	li	gp,4
+  6c:	0010009b          	addiw	ra,zero,1
+  70:	02009093          	slli	ra,ra,0x20
+  74:	fff08093          	addi	ra,ra,-1
+  78:	0010011b          	addiw	sp,zero,1
+  7c:	02011113          	slli	sp,sp,0x20
+  80:	fff10113          	addi	sp,sp,-1
+  84:	0020f663          	bgeu	ra,sp,90 <bgeu_4+0x28>
+  88:	38301c63          	bne	zero,gp,420 <failed>
+  8c:	00301663          	bne	zero,gp,98 <bgeu_5>
+  90:	fe20fee3          	bgeu	ra,sp,8c <bgeu_4+0x24>
+  94:	38301663          	bne	zero,gp,420 <failed>
+
+0000000000000098 <bgeu_5>:
+  98:	00500193          	li	gp,5
+  9c:	00100093          	li	ra,1
+  a0:	00000113          	li	sp,0
+  a4:	0020f663          	bgeu	ra,sp,b0 <bgeu_5+0x18>
+  a8:	36301c63          	bne	zero,gp,420 <failed>
+  ac:	00301663          	bne	zero,gp,b8 <bgeu_6>
+  b0:	fe20fee3          	bgeu	ra,sp,ac <bgeu_5+0x14>
+  b4:	36301663          	bne	zero,gp,420 <failed>
+
+00000000000000b8 <bgeu_6>:
+  b8:	00600193          	li	gp,6
+  bc:	0010009b          	addiw	ra,zero,1
+  c0:	02009093          	slli	ra,ra,0x20
+  c4:	fff08093          	addi	ra,ra,-1
+  c8:	0010011b          	addiw	sp,zero,1
+  cc:	02011113          	slli	sp,sp,0x20
+  d0:	ffe10113          	addi	sp,sp,-2
+  d4:	0020f663          	bgeu	ra,sp,e0 <bgeu_6+0x28>
+  d8:	34301463          	bne	zero,gp,420 <failed>
+  dc:	00301663          	bne	zero,gp,e8 <bgeu_7>
+  e0:	fe20fee3          	bgeu	ra,sp,dc <bgeu_6+0x24>
+  e4:	32301e63          	bne	zero,gp,420 <failed>
+
+00000000000000e8 <bgeu_7>:
+  e8:	00700193          	li	gp,7
+  ec:	0010009b          	addiw	ra,zero,1
+  f0:	02009093          	slli	ra,ra,0x20
+  f4:	fff08093          	addi	ra,ra,-1
+  f8:	00000113          	li	sp,0
+  fc:	0020f663          	bgeu	ra,sp,108 <bgeu_7+0x20>
+ 100:	32301063          	bne	zero,gp,420 <failed>
+ 104:	00301663          	bne	zero,gp,110 <bgeu_8>
+ 108:	fe20fee3          	bgeu	ra,sp,104 <bgeu_7+0x1c>
+ 10c:	30301a63          	bne	zero,gp,420 <failed>
+
+0000000000000110 <bgeu_8>:
+ 110:	00800193          	li	gp,8
+ 114:	00000093          	li	ra,0
+ 118:	00100113          	li	sp,1
+ 11c:	0020f463          	bgeu	ra,sp,124 <bgeu_8+0x14>
+ 120:	00301463          	bne	zero,gp,128 <bgeu_8+0x18>
+ 124:	2e301e63          	bne	zero,gp,420 <failed>
+ 128:	fe20fee3          	bgeu	ra,sp,124 <bgeu_8+0x14>
+
+000000000000012c <bgeu_9>:
+ 12c:	00900193          	li	gp,9
+ 130:	0010009b          	addiw	ra,zero,1
+ 134:	02009093          	slli	ra,ra,0x20
+ 138:	ffe08093          	addi	ra,ra,-2
+ 13c:	0010011b          	addiw	sp,zero,1
+ 140:	02011113          	slli	sp,sp,0x20
+ 144:	fff10113          	addi	sp,sp,-1
+ 148:	0020f463          	bgeu	ra,sp,150 <bgeu_9+0x24>
+ 14c:	00301463          	bne	zero,gp,154 <bgeu_9+0x28>
+ 150:	2c301863          	bne	zero,gp,420 <failed>
+ 154:	fe20fee3          	bgeu	ra,sp,150 <bgeu_9+0x24>
+
+0000000000000158 <bgeu_10>:
+ 158:	00a00193          	li	gp,10
+ 15c:	00000093          	li	ra,0
+ 160:	0010011b          	addiw	sp,zero,1
+ 164:	02011113          	slli	sp,sp,0x20
+ 168:	fff10113          	addi	sp,sp,-1
+ 16c:	0020f463          	bgeu	ra,sp,174 <bgeu_10+0x1c>
+ 170:	00301463          	bne	zero,gp,178 <bgeu_10+0x20>
+ 174:	2a301663          	bne	zero,gp,420 <failed>
+ 178:	fe20fee3          	bgeu	ra,sp,174 <bgeu_10+0x1c>
+
+000000000000017c <bgeu_11>:
+ 17c:	00b00193          	li	gp,11
+ 180:	800000b7          	lui	ra,0x80000
+ 184:	fff0809b          	addiw	ra,ra,-1 # 7fffffff <_sim_end+0x7fff0003>
+ 188:	0010011b          	addiw	sp,zero,1
+ 18c:	01f11113          	slli	sp,sp,0x1f
+ 190:	0020f463          	bgeu	ra,sp,198 <bgeu_11+0x1c>
+ 194:	00301463          	bne	zero,gp,19c <bgeu_11+0x20>
+ 198:	28301463          	bne	zero,gp,420 <failed>
+ 19c:	fe20fee3          	bgeu	ra,sp,198 <bgeu_11+0x1c>
+
+00000000000001a0 <bgeu_12>:
+ 1a0:	00c00193          	li	gp,12
+ 1a4:	00000213          	li	tp,0
+ 1a8:	00f0009b          	addiw	ra,zero,15
+ 1ac:	01c09093          	slli	ra,ra,0x1c
+ 1b0:	fff08093          	addi	ra,ra,-1
+ 1b4:	00f0011b          	addiw	sp,zero,15
+ 1b8:	01c11113          	slli	sp,sp,0x1c
+ 1bc:	2620f263          	bgeu	ra,sp,420 <failed>
+ 1c0:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 1c4:	00200293          	li	t0,2
+ 1c8:	fe5210e3          	bne	tp,t0,1a8 <bgeu_12+0x8>
+
+00000000000001cc <bgeu_13>:
+ 1cc:	00d00193          	li	gp,13
+ 1d0:	00000213          	li	tp,0
+ 1d4:	00f0009b          	addiw	ra,zero,15
+ 1d8:	01c09093          	slli	ra,ra,0x1c
+ 1dc:	fff08093          	addi	ra,ra,-1
+ 1e0:	00f0011b          	addiw	sp,zero,15
+ 1e4:	01c11113          	slli	sp,sp,0x1c
+ 1e8:	00000013          	nop
+ 1ec:	2220fa63          	bgeu	ra,sp,420 <failed>
+ 1f0:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 1f4:	00200293          	li	t0,2
+ 1f8:	fc521ee3          	bne	tp,t0,1d4 <bgeu_13+0x8>
+
+00000000000001fc <bgeu_14>:
+ 1fc:	00e00193          	li	gp,14
+ 200:	00000213          	li	tp,0
+ 204:	00f0009b          	addiw	ra,zero,15
+ 208:	01c09093          	slli	ra,ra,0x1c
+ 20c:	fff08093          	addi	ra,ra,-1
+ 210:	00f0011b          	addiw	sp,zero,15
+ 214:	01c11113          	slli	sp,sp,0x1c
+ 218:	00000013          	nop
+ 21c:	00000013          	nop
+ 220:	2020f063          	bgeu	ra,sp,420 <failed>
+ 224:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 228:	00200293          	li	t0,2
+ 22c:	fc521ce3          	bne	tp,t0,204 <bgeu_14+0x8>
+
+0000000000000230 <bgeu_15>:
+ 230:	00f00193          	li	gp,15
+ 234:	00000213          	li	tp,0
+ 238:	00f0009b          	addiw	ra,zero,15
+ 23c:	01c09093          	slli	ra,ra,0x1c
+ 240:	fff08093          	addi	ra,ra,-1
+ 244:	00000013          	nop
+ 248:	00f0011b          	addiw	sp,zero,15
+ 24c:	01c11113          	slli	sp,sp,0x1c
+ 250:	1c20f863          	bgeu	ra,sp,420 <failed>
+ 254:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 258:	00200293          	li	t0,2
+ 25c:	fc521ee3          	bne	tp,t0,238 <bgeu_15+0x8>
+
+0000000000000260 <bgeu_16>:
+ 260:	01000193          	li	gp,16
+ 264:	00000213          	li	tp,0
+ 268:	00f0009b          	addiw	ra,zero,15
+ 26c:	01c09093          	slli	ra,ra,0x1c
+ 270:	fff08093          	addi	ra,ra,-1
+ 274:	00000013          	nop
+ 278:	00f0011b          	addiw	sp,zero,15
+ 27c:	01c11113          	slli	sp,sp,0x1c
+ 280:	00000013          	nop
+ 284:	1820fe63          	bgeu	ra,sp,420 <failed>
+ 288:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 28c:	00200293          	li	t0,2
+ 290:	fc521ce3          	bne	tp,t0,268 <bgeu_16+0x8>
+
+0000000000000294 <bgeu_17>:
+ 294:	01100193          	li	gp,17
+ 298:	00000213          	li	tp,0
+ 29c:	00f0009b          	addiw	ra,zero,15
+ 2a0:	01c09093          	slli	ra,ra,0x1c
+ 2a4:	fff08093          	addi	ra,ra,-1
+ 2a8:	00000013          	nop
+ 2ac:	00000013          	nop
+ 2b0:	00f0011b          	addiw	sp,zero,15
+ 2b4:	01c11113          	slli	sp,sp,0x1c
+ 2b8:	1620f463          	bgeu	ra,sp,420 <failed>
+ 2bc:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 2c0:	00200293          	li	t0,2
+ 2c4:	fc521ce3          	bne	tp,t0,29c <bgeu_17+0x8>
+
+00000000000002c8 <bgeu_18>:
+ 2c8:	01200193          	li	gp,18
+ 2cc:	00000213          	li	tp,0
+ 2d0:	00f0009b          	addiw	ra,zero,15
+ 2d4:	01c09093          	slli	ra,ra,0x1c
+ 2d8:	fff08093          	addi	ra,ra,-1
+ 2dc:	00f0011b          	addiw	sp,zero,15
+ 2e0:	01c11113          	slli	sp,sp,0x1c
+ 2e4:	1220fe63          	bgeu	ra,sp,420 <failed>
+ 2e8:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 2ec:	00200293          	li	t0,2
+ 2f0:	fe5210e3          	bne	tp,t0,2d0 <bgeu_18+0x8>
+
+00000000000002f4 <bgeu_19>:
+ 2f4:	01300193          	li	gp,19
+ 2f8:	00000213          	li	tp,0
+ 2fc:	00f0009b          	addiw	ra,zero,15
+ 300:	01c09093          	slli	ra,ra,0x1c
+ 304:	fff08093          	addi	ra,ra,-1
+ 308:	00f0011b          	addiw	sp,zero,15
+ 30c:	01c11113          	slli	sp,sp,0x1c
+ 310:	00000013          	nop
+ 314:	1020f663          	bgeu	ra,sp,420 <failed>
+ 318:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 31c:	00200293          	li	t0,2
+ 320:	fc521ee3          	bne	tp,t0,2fc <bgeu_19+0x8>
+
+0000000000000324 <bgeu_20>:
+ 324:	01400193          	li	gp,20
+ 328:	00000213          	li	tp,0
+ 32c:	00f0009b          	addiw	ra,zero,15
+ 330:	01c09093          	slli	ra,ra,0x1c
+ 334:	fff08093          	addi	ra,ra,-1
+ 338:	00f0011b          	addiw	sp,zero,15
+ 33c:	01c11113          	slli	sp,sp,0x1c
+ 340:	00000013          	nop
+ 344:	00000013          	nop
+ 348:	0c20fc63          	bgeu	ra,sp,420 <failed>
+ 34c:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 350:	00200293          	li	t0,2
+ 354:	fc521ce3          	bne	tp,t0,32c <bgeu_20+0x8>
+
+0000000000000358 <bgeu_21>:
+ 358:	01500193          	li	gp,21
+ 35c:	00000213          	li	tp,0
+ 360:	00f0009b          	addiw	ra,zero,15
+ 364:	01c09093          	slli	ra,ra,0x1c
+ 368:	fff08093          	addi	ra,ra,-1
+ 36c:	00000013          	nop
+ 370:	00f0011b          	addiw	sp,zero,15
+ 374:	01c11113          	slli	sp,sp,0x1c
+ 378:	0a20f463          	bgeu	ra,sp,420 <failed>
+ 37c:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 380:	00200293          	li	t0,2
+ 384:	fc521ee3          	bne	tp,t0,360 <bgeu_21+0x8>
+
+0000000000000388 <bgeu_22>:
+ 388:	01600193          	li	gp,22
+ 38c:	00000213          	li	tp,0
+ 390:	00f0009b          	addiw	ra,zero,15
+ 394:	01c09093          	slli	ra,ra,0x1c
+ 398:	fff08093          	addi	ra,ra,-1
+ 39c:	00000013          	nop
+ 3a0:	00f0011b          	addiw	sp,zero,15
+ 3a4:	01c11113          	slli	sp,sp,0x1c
+ 3a8:	00000013          	nop
+ 3ac:	0620fa63          	bgeu	ra,sp,420 <failed>
+ 3b0:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 3b4:	00200293          	li	t0,2
+ 3b8:	fc521ce3          	bne	tp,t0,390 <bgeu_22+0x8>
+
+00000000000003bc <bgeu_23>:
+ 3bc:	01700193          	li	gp,23
+ 3c0:	00000213          	li	tp,0
+ 3c4:	00f0009b          	addiw	ra,zero,15
+ 3c8:	01c09093          	slli	ra,ra,0x1c
+ 3cc:	fff08093          	addi	ra,ra,-1
+ 3d0:	00000013          	nop
+ 3d4:	00000013          	nop
+ 3d8:	00f0011b          	addiw	sp,zero,15
+ 3dc:	01c11113          	slli	sp,sp,0x1c
+ 3e0:	0420f063          	bgeu	ra,sp,420 <failed>
+ 3e4:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 3e8:	00200293          	li	t0,2
+ 3ec:	fc521ce3          	bne	tp,t0,3c4 <bgeu_23+0x8>
+
+00000000000003f0 <bgeu_24>:
+ 3f0:	01800193          	li	gp,24
+ 3f4:	00100093          	li	ra,1
+ 3f8:	0000fa63          	bgeu	ra,zero,40c <bgeu_24+0x1c>
+ 3fc:	00108093          	addi	ra,ra,1
+ 400:	00108093          	addi	ra,ra,1
+ 404:	00108093          	addi	ra,ra,1
+ 408:	00108093          	addi	ra,ra,1
+ 40c:	00108093          	addi	ra,ra,1
+ 410:	00108093          	addi	ra,ra,1
+ 414:	00300393          	li	t2,3
+ 418:	00709463          	bne	ra,t2,420 <failed>
+
+000000000000041c <pass>:
+ 41c:	00000193          	li	gp,0
+
+0000000000000420 <failed>:
+ 420:	00342023          	sw	gp,0(s0)
+
+0000000000000424 <main_exit>:
+ 424:	000e8093          	mv	ra,t4
+ 428:	000e0413          	mv	s0,t3
+ 42c:	00008067          	ret

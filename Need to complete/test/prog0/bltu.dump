@@ -1,0 +1,420 @@
+
+./finish/bltu.elf:     file format elf64-littleriscv
+./finish/bltu.elf
+architecture: riscv:rv64, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x0000000000000000
+
+Program Header:
+0x70000003 off    0x00000000000013c0 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**0
+         filesz 0x000000000000001a memsz 0x0000000000000000 flags r--
+    LOAD off    0x0000000000001000 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**12
+         filesz 0x00000000000003c0 memsz 0x00000000000003c0 flags r-x
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         000003c0  0000000000000000  0000000000000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .riscv.attributes 0000001a  0000000000000000  0000000000000000  000013c0  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .riscv.attributes	0000000000000000 .riscv.attributes
+0000000000000000 l    df *ABS*	0000000000000000 setup.o
+0000000000000000 l       .text	0000000000000000 _start
+0000000000000000 l       .text	0000000000000000 init_stack
+0000000000000008 l       .text	0000000000000000 SystemInit
+000000000000000c l       .text	0000000000000000 SystemExit
+000000000000001c l       .text	0000000000000000 dead_loop
+0000000000000000 l    df *ABS*	0000000000000000 bltu.o
+0000000000000028 l       .text	0000000000000000 bltu_2
+00000000000003b0 l       .text	0000000000000000 failed
+0000000000000048 l       .text	0000000000000000 bltu_3
+0000000000000078 l       .text	0000000000000000 bltu_4
+00000000000000a0 l       .text	0000000000000000 bltu_5
+00000000000000bc l       .text	0000000000000000 bltu_6
+00000000000000e8 l       .text	0000000000000000 bltu_7
+000000000000010c l       .text	0000000000000000 bltu_8
+0000000000000130 l       .text	0000000000000000 bltu_9
+000000000000015c l       .text	0000000000000000 bltu_10
+000000000000018c l       .text	0000000000000000 bltu_11
+00000000000001c0 l       .text	0000000000000000 bltu_12
+00000000000001f0 l       .text	0000000000000000 bltu_13
+0000000000000224 l       .text	0000000000000000 bltu_14
+0000000000000258 l       .text	0000000000000000 bltu_15
+0000000000000284 l       .text	0000000000000000 bltu_16
+00000000000002b4 l       .text	0000000000000000 bltu_17
+00000000000002e8 l       .text	0000000000000000 bltu_18
+0000000000000318 l       .text	0000000000000000 bltu_19
+000000000000034c l       .text	0000000000000000 bltu_20
+0000000000000380 l       .text	0000000000000000 bltu_21
+00000000000003ac l       .text	0000000000000000 pass
+00000000000003b4 l       .text	0000000000000000 main_exit
+000000000000fffc g       .text	0000000000000000 _sim_end
+0000000000000020 g       .text	0000000000000000 main
+0000000000009000 g       .text	0000000000000000 _answer
+000000000000fff0 g       .text	0000000000000000 _stack
+
+
+Contents of section .text:
+ 0000 17010100 130101ff ef008001 97020100  ................
+ 0010 938202ff 1303f0ff 23a06200 6f000000  ........#.b.o...
+ 0020 130e0400 938e0000 93012000 93000000  .......... .....
+ 0030 13011000 63e62000 631c3036 63163000  ....c. .c.06c.0.
+ 0040 e3ee20fe 63163036 93013000 9b001000  .. .c.06..0.....
+ 0050 93900002 9380e0ff 1b011000 13110102  ................
+ 0060 1301f1ff 63e62000 63143034 63163000  ....c. .c.04c.0.
+ 0070 e3ee20fe 631e3032 93014000 93000000  .. .c.02..@.....
+ 0080 1b011000 13110102 1301f1ff 63e62000  ............c. .
+ 0090 63103032 63163000 e3ee20fe 631a3030  c.02c.0... .c.00
+ 00a0 93015000 93001000 13010000 63e42000  ..P.........c. .
+ 00b0 63143000 631e302e e3ee20fe 93016000  c.0.c.0... ...`.
+ 00c0 9b001000 93900002 9380f0ff 1b011000  ................
+ 00d0 13110102 1301e1ff 63e42000 63143000  ........c. .c.0.
+ 00e0 6318302c e3ee20fe 93017000 9b001000  c.0,.. ...p.....
+ 00f0 93900002 9380f0ff 13010000 63e42000  ............c. .
+ 0100 63143000 6316302a e3ee20fe 93018000  c.0.c.0*.. .....
+ 0110 9b001000 9390f001 37010080 1b01f1ff  ........7.......
+ 0120 63e42000 63143000 63143028 e3ee20fe  c. .c.0.c.0(.. .
+ 0130 93019000 13020000 9b00f000 9390c001  ................
+ 0140 1b01f000 1311c101 1301f1ff 63e22026  ............c. &
+ 0150 13021200 93022000 e31052fe 9301a000  ...... ...R.....
+ 0160 13020000 9b00f000 9390c001 1b01f000  ................
+ 0170 1311c101 1301f1ff 13000000 63ea2022  ............c. "
+ 0180 13021200 93022000 e31e52fc 9301b000  ...... ...R.....
+ 0190 13020000 9b00f000 9390c001 1b01f000  ................
+ 01a0 1311c101 1301f1ff 13000000 13000000  ................
+ 01b0 63e02020 13021200 93022000 e31c52fc  c.  ...... ...R.
+ 01c0 9301c000 13020000 9b00f000 9390c001  ................
+ 01d0 13000000 1b01f000 1311c101 1301f1ff  ................
+ 01e0 63e8201c 13021200 93022000 e31e52fc  c. ....... ...R.
+ 01f0 9301d000 13020000 9b00f000 9390c001  ................
+ 0200 13000000 1b01f000 1311c101 1301f1ff  ................
+ 0210 13000000 63ee2018 13021200 93022000  ....c. ....... .
+ 0220 e31c52fc 9301e000 13020000 9b00f000  ..R.............
+ 0230 9390c001 13000000 13000000 1b01f000  ................
+ 0240 1311c101 1301f1ff 63e42016 13021200  ........c. .....
+ 0250 93022000 e31c52fc 9301f000 13020000  .. ...R.........
+ 0260 9b00f000 9390c001 1b01f000 1311c101  ................
+ 0270 1301f1ff 63ee2012 13021200 93022000  ....c. ....... .
+ 0280 e31052fe 93010001 13020000 9b00f000  ..R.............
+ 0290 9390c001 1b01f000 1311c101 1301f1ff  ................
+ 02a0 13000000 63e62010 13021200 93022000  ....c. ....... .
+ 02b0 e31e52fc 93011001 13020000 9b00f000  ..R.............
+ 02c0 9390c001 1b01f000 1311c101 1301f1ff  ................
+ 02d0 13000000 13000000 63ec200c 13021200  ........c. .....
+ 02e0 93022000 e31c52fc 93012001 13020000  .. ...R... .....
+ 02f0 9b00f000 9390c001 13000000 1b01f000  ................
+ 0300 1311c101 1301f1ff 63e4200a 13021200  ........c. .....
+ 0310 93022000 e31e52fc 93013001 13020000  .. ...R...0.....
+ 0320 9b00f000 9390c001 13000000 1b01f000  ................
+ 0330 1311c101 1301f1ff 13000000 63ea2006  ............c. .
+ 0340 13021200 93022000 e31c52fc 93014001  ...... ...R...@.
+ 0350 13020000 9b00f000 9390c001 13000000  ................
+ 0360 13000000 1b01f000 1311c101 1301f1ff  ................
+ 0370 63e02004 13021200 93022000 e31c52fc  c. ....... ...R.
+ 0380 93015001 93001000 636a1000 93801000  ..P.....cj......
+ 0390 93801000 93801000 93801000 93801000  ................
+ 03a0 93801000 93033000 63947000 93010000  ......0.c.p.....
+ 03b0 23203400 93800e00 13040e00 67800000  # 4.........g...
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727636 34693270 3100               .rv64i2p1.      
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00010117          	auipc	sp,0x10
+   4:	ff010113          	addi	sp,sp,-16 # fff0 <_stack>
+
+0000000000000008 <SystemInit>:
+   8:	018000ef          	jal	20 <main>
+
+000000000000000c <SystemExit>:
+   c:	00010297          	auipc	t0,0x10
+  10:	ff028293          	addi	t0,t0,-16 # fffc <_sim_end>
+  14:	fff00313          	li	t1,-1
+  18:	0062a023          	sw	t1,0(t0)
+
+000000000000001c <dead_loop>:
+  1c:	0000006f          	j	1c <dead_loop>
+
+0000000000000020 <main>:
+  20:	00040e13          	mv	t3,s0
+  24:	00008e93          	mv	t4,ra
+
+0000000000000028 <bltu_2>:
+  28:	00200193          	li	gp,2
+  2c:	00000093          	li	ra,0
+  30:	00100113          	li	sp,1
+  34:	0020e663          	bltu	ra,sp,40 <bltu_2+0x18>
+  38:	36301c63          	bne	zero,gp,3b0 <failed>
+  3c:	00301663          	bne	zero,gp,48 <bltu_3>
+  40:	fe20eee3          	bltu	ra,sp,3c <bltu_2+0x14>
+  44:	36301663          	bne	zero,gp,3b0 <failed>
+
+0000000000000048 <bltu_3>:
+  48:	00300193          	li	gp,3
+  4c:	0010009b          	addiw	ra,zero,1
+  50:	02009093          	slli	ra,ra,0x20
+  54:	ffe08093          	addi	ra,ra,-2
+  58:	0010011b          	addiw	sp,zero,1
+  5c:	02011113          	slli	sp,sp,0x20
+  60:	fff10113          	addi	sp,sp,-1
+  64:	0020e663          	bltu	ra,sp,70 <bltu_3+0x28>
+  68:	34301463          	bne	zero,gp,3b0 <failed>
+  6c:	00301663          	bne	zero,gp,78 <bltu_4>
+  70:	fe20eee3          	bltu	ra,sp,6c <bltu_3+0x24>
+  74:	32301e63          	bne	zero,gp,3b0 <failed>
+
+0000000000000078 <bltu_4>:
+  78:	00400193          	li	gp,4
+  7c:	00000093          	li	ra,0
+  80:	0010011b          	addiw	sp,zero,1
+  84:	02011113          	slli	sp,sp,0x20
+  88:	fff10113          	addi	sp,sp,-1
+  8c:	0020e663          	bltu	ra,sp,98 <bltu_4+0x20>
+  90:	32301063          	bne	zero,gp,3b0 <failed>
+  94:	00301663          	bne	zero,gp,a0 <bltu_5>
+  98:	fe20eee3          	bltu	ra,sp,94 <bltu_4+0x1c>
+  9c:	30301a63          	bne	zero,gp,3b0 <failed>
+
+00000000000000a0 <bltu_5>:
+  a0:	00500193          	li	gp,5
+  a4:	00100093          	li	ra,1
+  a8:	00000113          	li	sp,0
+  ac:	0020e463          	bltu	ra,sp,b4 <bltu_5+0x14>
+  b0:	00301463          	bne	zero,gp,b8 <bltu_5+0x18>
+  b4:	2e301e63          	bne	zero,gp,3b0 <failed>
+  b8:	fe20eee3          	bltu	ra,sp,b4 <bltu_5+0x14>
+
+00000000000000bc <bltu_6>:
+  bc:	00600193          	li	gp,6
+  c0:	0010009b          	addiw	ra,zero,1
+  c4:	02009093          	slli	ra,ra,0x20
+  c8:	fff08093          	addi	ra,ra,-1
+  cc:	0010011b          	addiw	sp,zero,1
+  d0:	02011113          	slli	sp,sp,0x20
+  d4:	ffe10113          	addi	sp,sp,-2
+  d8:	0020e463          	bltu	ra,sp,e0 <bltu_6+0x24>
+  dc:	00301463          	bne	zero,gp,e4 <bltu_6+0x28>
+  e0:	2c301863          	bne	zero,gp,3b0 <failed>
+  e4:	fe20eee3          	bltu	ra,sp,e0 <bltu_6+0x24>
+
+00000000000000e8 <bltu_7>:
+  e8:	00700193          	li	gp,7
+  ec:	0010009b          	addiw	ra,zero,1
+  f0:	02009093          	slli	ra,ra,0x20
+  f4:	fff08093          	addi	ra,ra,-1
+  f8:	00000113          	li	sp,0
+  fc:	0020e463          	bltu	ra,sp,104 <bltu_7+0x1c>
+ 100:	00301463          	bne	zero,gp,108 <bltu_7+0x20>
+ 104:	2a301663          	bne	zero,gp,3b0 <failed>
+ 108:	fe20eee3          	bltu	ra,sp,104 <bltu_7+0x1c>
+
+000000000000010c <bltu_8>:
+ 10c:	00800193          	li	gp,8
+ 110:	0010009b          	addiw	ra,zero,1
+ 114:	01f09093          	slli	ra,ra,0x1f
+ 118:	80000137          	lui	sp,0x80000
+ 11c:	fff1011b          	addiw	sp,sp,-1 # 7fffffff <_sim_end+0x7fff0003>
+ 120:	0020e463          	bltu	ra,sp,128 <bltu_8+0x1c>
+ 124:	00301463          	bne	zero,gp,12c <bltu_8+0x20>
+ 128:	28301463          	bne	zero,gp,3b0 <failed>
+ 12c:	fe20eee3          	bltu	ra,sp,128 <bltu_8+0x1c>
+
+0000000000000130 <bltu_9>:
+ 130:	00900193          	li	gp,9
+ 134:	00000213          	li	tp,0
+ 138:	00f0009b          	addiw	ra,zero,15
+ 13c:	01c09093          	slli	ra,ra,0x1c
+ 140:	00f0011b          	addiw	sp,zero,15
+ 144:	01c11113          	slli	sp,sp,0x1c
+ 148:	fff10113          	addi	sp,sp,-1
+ 14c:	2620e263          	bltu	ra,sp,3b0 <failed>
+ 150:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 154:	00200293          	li	t0,2
+ 158:	fe5210e3          	bne	tp,t0,138 <bltu_9+0x8>
+
+000000000000015c <bltu_10>:
+ 15c:	00a00193          	li	gp,10
+ 160:	00000213          	li	tp,0
+ 164:	00f0009b          	addiw	ra,zero,15
+ 168:	01c09093          	slli	ra,ra,0x1c
+ 16c:	00f0011b          	addiw	sp,zero,15
+ 170:	01c11113          	slli	sp,sp,0x1c
+ 174:	fff10113          	addi	sp,sp,-1
+ 178:	00000013          	nop
+ 17c:	2220ea63          	bltu	ra,sp,3b0 <failed>
+ 180:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 184:	00200293          	li	t0,2
+ 188:	fc521ee3          	bne	tp,t0,164 <bltu_10+0x8>
+
+000000000000018c <bltu_11>:
+ 18c:	00b00193          	li	gp,11
+ 190:	00000213          	li	tp,0
+ 194:	00f0009b          	addiw	ra,zero,15
+ 198:	01c09093          	slli	ra,ra,0x1c
+ 19c:	00f0011b          	addiw	sp,zero,15
+ 1a0:	01c11113          	slli	sp,sp,0x1c
+ 1a4:	fff10113          	addi	sp,sp,-1
+ 1a8:	00000013          	nop
+ 1ac:	00000013          	nop
+ 1b0:	2020e063          	bltu	ra,sp,3b0 <failed>
+ 1b4:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 1b8:	00200293          	li	t0,2
+ 1bc:	fc521ce3          	bne	tp,t0,194 <bltu_11+0x8>
+
+00000000000001c0 <bltu_12>:
+ 1c0:	00c00193          	li	gp,12
+ 1c4:	00000213          	li	tp,0
+ 1c8:	00f0009b          	addiw	ra,zero,15
+ 1cc:	01c09093          	slli	ra,ra,0x1c
+ 1d0:	00000013          	nop
+ 1d4:	00f0011b          	addiw	sp,zero,15
+ 1d8:	01c11113          	slli	sp,sp,0x1c
+ 1dc:	fff10113          	addi	sp,sp,-1
+ 1e0:	1c20e863          	bltu	ra,sp,3b0 <failed>
+ 1e4:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 1e8:	00200293          	li	t0,2
+ 1ec:	fc521ee3          	bne	tp,t0,1c8 <bltu_12+0x8>
+
+00000000000001f0 <bltu_13>:
+ 1f0:	00d00193          	li	gp,13
+ 1f4:	00000213          	li	tp,0
+ 1f8:	00f0009b          	addiw	ra,zero,15
+ 1fc:	01c09093          	slli	ra,ra,0x1c
+ 200:	00000013          	nop
+ 204:	00f0011b          	addiw	sp,zero,15
+ 208:	01c11113          	slli	sp,sp,0x1c
+ 20c:	fff10113          	addi	sp,sp,-1
+ 210:	00000013          	nop
+ 214:	1820ee63          	bltu	ra,sp,3b0 <failed>
+ 218:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 21c:	00200293          	li	t0,2
+ 220:	fc521ce3          	bne	tp,t0,1f8 <bltu_13+0x8>
+
+0000000000000224 <bltu_14>:
+ 224:	00e00193          	li	gp,14
+ 228:	00000213          	li	tp,0
+ 22c:	00f0009b          	addiw	ra,zero,15
+ 230:	01c09093          	slli	ra,ra,0x1c
+ 234:	00000013          	nop
+ 238:	00000013          	nop
+ 23c:	00f0011b          	addiw	sp,zero,15
+ 240:	01c11113          	slli	sp,sp,0x1c
+ 244:	fff10113          	addi	sp,sp,-1
+ 248:	1620e463          	bltu	ra,sp,3b0 <failed>
+ 24c:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 250:	00200293          	li	t0,2
+ 254:	fc521ce3          	bne	tp,t0,22c <bltu_14+0x8>
+
+0000000000000258 <bltu_15>:
+ 258:	00f00193          	li	gp,15
+ 25c:	00000213          	li	tp,0
+ 260:	00f0009b          	addiw	ra,zero,15
+ 264:	01c09093          	slli	ra,ra,0x1c
+ 268:	00f0011b          	addiw	sp,zero,15
+ 26c:	01c11113          	slli	sp,sp,0x1c
+ 270:	fff10113          	addi	sp,sp,-1
+ 274:	1220ee63          	bltu	ra,sp,3b0 <failed>
+ 278:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 27c:	00200293          	li	t0,2
+ 280:	fe5210e3          	bne	tp,t0,260 <bltu_15+0x8>
+
+0000000000000284 <bltu_16>:
+ 284:	01000193          	li	gp,16
+ 288:	00000213          	li	tp,0
+ 28c:	00f0009b          	addiw	ra,zero,15
+ 290:	01c09093          	slli	ra,ra,0x1c
+ 294:	00f0011b          	addiw	sp,zero,15
+ 298:	01c11113          	slli	sp,sp,0x1c
+ 29c:	fff10113          	addi	sp,sp,-1
+ 2a0:	00000013          	nop
+ 2a4:	1020e663          	bltu	ra,sp,3b0 <failed>
+ 2a8:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 2ac:	00200293          	li	t0,2
+ 2b0:	fc521ee3          	bne	tp,t0,28c <bltu_16+0x8>
+
+00000000000002b4 <bltu_17>:
+ 2b4:	01100193          	li	gp,17
+ 2b8:	00000213          	li	tp,0
+ 2bc:	00f0009b          	addiw	ra,zero,15
+ 2c0:	01c09093          	slli	ra,ra,0x1c
+ 2c4:	00f0011b          	addiw	sp,zero,15
+ 2c8:	01c11113          	slli	sp,sp,0x1c
+ 2cc:	fff10113          	addi	sp,sp,-1
+ 2d0:	00000013          	nop
+ 2d4:	00000013          	nop
+ 2d8:	0c20ec63          	bltu	ra,sp,3b0 <failed>
+ 2dc:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 2e0:	00200293          	li	t0,2
+ 2e4:	fc521ce3          	bne	tp,t0,2bc <bltu_17+0x8>
+
+00000000000002e8 <bltu_18>:
+ 2e8:	01200193          	li	gp,18
+ 2ec:	00000213          	li	tp,0
+ 2f0:	00f0009b          	addiw	ra,zero,15
+ 2f4:	01c09093          	slli	ra,ra,0x1c
+ 2f8:	00000013          	nop
+ 2fc:	00f0011b          	addiw	sp,zero,15
+ 300:	01c11113          	slli	sp,sp,0x1c
+ 304:	fff10113          	addi	sp,sp,-1
+ 308:	0a20e463          	bltu	ra,sp,3b0 <failed>
+ 30c:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 310:	00200293          	li	t0,2
+ 314:	fc521ee3          	bne	tp,t0,2f0 <bltu_18+0x8>
+
+0000000000000318 <bltu_19>:
+ 318:	01300193          	li	gp,19
+ 31c:	00000213          	li	tp,0
+ 320:	00f0009b          	addiw	ra,zero,15
+ 324:	01c09093          	slli	ra,ra,0x1c
+ 328:	00000013          	nop
+ 32c:	00f0011b          	addiw	sp,zero,15
+ 330:	01c11113          	slli	sp,sp,0x1c
+ 334:	fff10113          	addi	sp,sp,-1
+ 338:	00000013          	nop
+ 33c:	0620ea63          	bltu	ra,sp,3b0 <failed>
+ 340:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 344:	00200293          	li	t0,2
+ 348:	fc521ce3          	bne	tp,t0,320 <bltu_19+0x8>
+
+000000000000034c <bltu_20>:
+ 34c:	01400193          	li	gp,20
+ 350:	00000213          	li	tp,0
+ 354:	00f0009b          	addiw	ra,zero,15
+ 358:	01c09093          	slli	ra,ra,0x1c
+ 35c:	00000013          	nop
+ 360:	00000013          	nop
+ 364:	00f0011b          	addiw	sp,zero,15
+ 368:	01c11113          	slli	sp,sp,0x1c
+ 36c:	fff10113          	addi	sp,sp,-1
+ 370:	0420e063          	bltu	ra,sp,3b0 <failed>
+ 374:	00120213          	addi	tp,tp,1 # 1 <_start+0x1>
+ 378:	00200293          	li	t0,2
+ 37c:	fc521ce3          	bne	tp,t0,354 <bltu_20+0x8>
+
+0000000000000380 <bltu_21>:
+ 380:	01500193          	li	gp,21
+ 384:	00100093          	li	ra,1
+ 388:	00106a63          	bltu	zero,ra,39c <bltu_21+0x1c>
+ 38c:	00108093          	addi	ra,ra,1
+ 390:	00108093          	addi	ra,ra,1
+ 394:	00108093          	addi	ra,ra,1
+ 398:	00108093          	addi	ra,ra,1
+ 39c:	00108093          	addi	ra,ra,1
+ 3a0:	00108093          	addi	ra,ra,1
+ 3a4:	00300393          	li	t2,3
+ 3a8:	00709463          	bne	ra,t2,3b0 <failed>
+
+00000000000003ac <pass>:
+ 3ac:	00000193          	li	gp,0
+
+00000000000003b0 <failed>:
+ 3b0:	00342023          	sw	gp,0(s0)
+
+00000000000003b4 <main_exit>:
+ 3b4:	000e8093          	mv	ra,t4
+ 3b8:	000e0413          	mv	s0,t3
+ 3bc:	00008067          	ret

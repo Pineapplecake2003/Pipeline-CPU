@@ -1,0 +1,116 @@
+
+./finish/jal.elf:     file format elf64-littleriscv
+./finish/jal.elf
+architecture: riscv:rv64, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x0000000000000000
+
+Program Header:
+0x70000003 off    0x000000000000108c vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**0
+         filesz 0x000000000000001a memsz 0x0000000000000000 flags r--
+    LOAD off    0x0000000000001000 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**12
+         filesz 0x000000000000008c memsz 0x000000000000008c flags r-x
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         0000008c  0000000000000000  0000000000000000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .riscv.attributes 0000001a  0000000000000000  0000000000000000  0000108c  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .riscv.attributes	0000000000000000 .riscv.attributes
+0000000000000000 l    df *ABS*	0000000000000000 setup.o
+0000000000000000 l       .text	0000000000000000 _start
+0000000000000000 l       .text	0000000000000000 init_stack
+0000000000000008 l       .text	0000000000000000 SystemInit
+000000000000000c l       .text	0000000000000000 SystemExit
+000000000000001c l       .text	0000000000000000 dead_loop
+0000000000000000 l    df *ABS*	0000000000000000 jal.o
+0000000000000028 l       .text	0000000000000000 jal_2
+0000000000000040 l       .text	0000000000000000 target_2
+0000000000000034 l       .text	0000000000000000 linkaddr_2
+000000000000007c l       .text	0000000000000000 failed
+000000000000004c l       .text	0000000000000000 jal_3
+0000000000000078 l       .text	0000000000000000 pass
+0000000000000080 l       .text	0000000000000000 main_exit
+000000000000fffc g       .text	0000000000000000 _sim_end
+0000000000000020 g       .text	0000000000000000 main
+0000000000009000 g       .text	0000000000000000 _answer
+000000000000fff0 g       .text	0000000000000000 _stack
+
+
+Contents of section .text:
+ 0000 17010100 130101ff ef008001 97020100  ................
+ 0010 938202ff 1303f0ff 23a06200 6f000000  ........#.b.o...
+ 0020 130e0400 938e0000 93012000 93000000  .......... .....
+ 0030 6f020001 13000000 13000000 6f000004  o...........o...
+ 0040 17010000 130141ff 631a4102 93013000  ......A.c.A...0.
+ 0050 93001000 6f004001 93801000 93801000  ....o.@.........
+ 0060 93801000 93801000 93801000 93801000  ................
+ 0070 93033000 63947000 93010000 23203400  ..0.c.p.....# 4.
+ 0080 93800e00 13040e00 67800000           ........g...    
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727636 34693270 3100               .rv64i2p1.      
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00010117          	auipc	sp,0x10
+   4:	ff010113          	addi	sp,sp,-16 # fff0 <_stack>
+
+0000000000000008 <SystemInit>:
+   8:	018000ef          	jal	20 <main>
+
+000000000000000c <SystemExit>:
+   c:	00010297          	auipc	t0,0x10
+  10:	ff028293          	addi	t0,t0,-16 # fffc <_sim_end>
+  14:	fff00313          	li	t1,-1
+  18:	0062a023          	sw	t1,0(t0)
+
+000000000000001c <dead_loop>:
+  1c:	0000006f          	j	1c <dead_loop>
+
+0000000000000020 <main>:
+  20:	00040e13          	mv	t3,s0
+  24:	00008e93          	mv	t4,ra
+
+0000000000000028 <jal_2>:
+  28:	00200193          	li	gp,2
+  2c:	00000093          	li	ra,0
+  30:	0100026f          	jal	tp,40 <target_2>
+
+0000000000000034 <linkaddr_2>:
+  34:	00000013          	nop
+  38:	00000013          	nop
+  3c:	0400006f          	j	7c <failed>
+
+0000000000000040 <target_2>:
+  40:	00000117          	auipc	sp,0x0
+  44:	ff410113          	addi	sp,sp,-12 # 34 <linkaddr_2>
+  48:	02411a63          	bne	sp,tp,7c <failed>
+
+000000000000004c <jal_3>:
+  4c:	00300193          	li	gp,3
+  50:	00100093          	li	ra,1
+  54:	0140006f          	j	68 <jal_3+0x1c>
+  58:	00108093          	addi	ra,ra,1
+  5c:	00108093          	addi	ra,ra,1
+  60:	00108093          	addi	ra,ra,1
+  64:	00108093          	addi	ra,ra,1
+  68:	00108093          	addi	ra,ra,1
+  6c:	00108093          	addi	ra,ra,1
+  70:	00300393          	li	t2,3
+  74:	00709463          	bne	ra,t2,7c <failed>
+
+0000000000000078 <pass>:
+  78:	00000193          	li	gp,0
+
+000000000000007c <failed>:
+  7c:	00342023          	sw	gp,0(s0)
+
+0000000000000080 <main_exit>:
+  80:	000e8093          	mv	ra,t4
+  84:	000e0413          	mv	s0,t3
+  88:	00008067          	ret
